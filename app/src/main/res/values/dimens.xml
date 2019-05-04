@@ -1,0 +1,21 @@
+<resources>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="space_margin">10dp</dimen>
+
+    // ava move res
+    <dimen name="ava_expanded_size">90dp</dimen>
+    <dimen name="ava_collapsed_size">55dp</dimen>
+    <dimen name="ava_expanded_left_pos">30dp</dimen>
+    <dimen name="ava_collapsed_left_pos">10dp</dimen>
+    <dimen name="ava_collapsed_top_margin">5dp</dimen>
+    <dimen name="ava_point_to_move">100dp</dimen>
+
+    // activity scrolling
+    <dimen name="prof_layout_name_height">65dp</dimen>
+    <dimen name="prof_layout_buttons_height">45dp</dimen>
+    <dimen name="prof_bt_margin">24dp</dimen>
+    <dimen name="prof_top_img_height">150dp</dimen>
+    <dimen name="prof_name_text_size">22dp</dimen>
+</resources>
