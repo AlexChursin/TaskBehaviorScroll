@@ -37,4 +37,10 @@ dependencies {
     // ripple
     implementation 'com.balysv:material-ripple:1.0.2'
 
+    implementation 'com.arello-mobile:moxy:1.5.5'
+    annotationProcessor 'com.arello-mobile:moxy-compiler:1.5.5'
+    implementation 'com.arello-mobile:moxy-android:1.5.5'
+
+    //material component
+ //   implementation 'com.google.android.material:material:1.1.0-alpha06'
 }

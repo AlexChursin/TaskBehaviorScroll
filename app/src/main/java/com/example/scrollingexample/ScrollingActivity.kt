@@ -4,24 +4,25 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.view.Menu
-import android.view.MenuItem
 import com.example.scrollingexample.model.ProfilePeopleInList
 import com.example.scrollingexample.adapters.AdapterListPeople
+
 import kotlinx.android.synthetic.main.scrolling_activity.*
+import android.view.*
+import android.widget.FrameLayout
+import com.example.scrollingexample.data.DataGenerator
+import kotlinx.android.synthetic.main.sheet_basic.*
+
 
 class ScrollingActivity : AppCompatActivity() {
 
-    companion object {
-        fun getAppContext(): Context {
-            return getAppContext()
-        }
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.scrolling_activity)
         setSupportActionBar(prof_toolbar)
+
 
         val listProfPeople = listOf(
             ProfilePeopleInList("Name","Surname",R.drawable.avatar),
@@ -63,7 +64,10 @@ class ScrollingActivity : AppCompatActivity() {
             ProfilePeopleInList("Name","Surname",R.drawable.ic_person)
         )
 
-        val viewAdapter = AdapterListPeople(this,listProfPeople )
+
+    //    val bottomSheet = findViewById<FrameLayout>(R.id.bottom_sheet)
+        val sheetBottom = layoutInflater.run { inflate(R.layout.sheet_basic,null) }
+        val viewAdapter = AdapterListPeople(this,DataGenerator.getPeopleData(this), sheetBottom, bottom_sheet )
         val viewManager = LinearLayoutManager(this)
         prof_recycler_items.apply {
 
@@ -72,6 +76,8 @@ class ScrollingActivity : AppCompatActivity() {
             isLongClickable = true
             isClickable = true
         }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -90,4 +96,6 @@ class ScrollingActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 }

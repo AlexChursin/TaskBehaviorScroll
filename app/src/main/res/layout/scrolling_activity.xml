@@ -30,6 +30,7 @@
     </android.support.v7.widget.Toolbar>
 
     <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/prof_coordinator_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="RtlHardcoded">
@@ -40,6 +41,7 @@
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/prof_collapsing_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/prof_top_img_height"
                     app:expandedTitleMarginStart="48dp"
@@ -48,9 +50,9 @@
                     app:contentScrim="@color/colorWhite">
 
                 <ImageView
+                        android:id="@+id/prof_main_img"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/prof_main_img"
                         android:layout_marginTop="-40dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/sea"
@@ -68,56 +70,55 @@
                     android:orientation="vertical"
             >
 
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="horizontal"
+                              android:layout_weight="1">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/prof_name"
+                            android:gravity="center_vertical"
+                            android:text="@string/prof_name"
+                            android:textSize="@dimen/prof_name_text_size"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/colorWhite"
+                            android:layout_marginEnd="@dimen/space_margin"
+                    />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/prof_surname"
+                            android:text="@string/prof_surname"
+                            android:textSize="@dimen/prof_name_text_size"
+                            android:gravity="center_vertical"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/colorWhite"/>
+                </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent"
-                                  android:layout_height="wrap_content"
-                                  android:orientation="horizontal"
-                                  android:layout_weight="1">
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:id="@+id/prof_name"
-                                android:gravity="center_vertical"
-                                android:text="@string/prof_name"
-                                android:textSize="@dimen/prof_name_text_size"
-                                android:fontFamily="sans-serif-light"
-                                android:textColor="@color/colorWhite"
-                                android:layout_marginEnd="@dimen/space_margin"
-                        />
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:id="@+id/prof_surname"
-                                android:text="@string/prof_surname"
-                                android:textSize="@dimen/prof_name_text_size"
-                                android:gravity="center_vertical"
-                                android:fontFamily="sans-serif-light"
-                                android:textColor="@color/colorWhite"/>
-                    </LinearLayout>
-
-                    <LinearLayout android:layout_width="wrap_content"
-                                  android:orientation="horizontal"
-                                  android:layout_weight="1"
-                                  android:layout_height="wrap_content">
-                        <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginEnd="@dimen/space_margin"
-                                android:gravity="center_vertical"
-                                android:text="@string/prof_followers_text"
-                                android:fontFamily="sans-serif-light"
-                                android:textColor="@color/colorPrimaryDark"
-                        />
-                        <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:id="@+id/prof_followers_count"
-                                android:gravity="center_vertical"
-                                android:text="count"
-                                android:fontFamily="sans-serif-light"
-                                android:textColor="@color/colorPrimaryDark"
-                        />
-                    </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content"
+                              android:orientation="horizontal"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/space_margin"
+                            android:gravity="center_vertical"
+                            android:text="@string/prof_followers_text"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/colorPrimaryDark"
+                    />
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/prof_followers_count"
+                            android:gravity="center_vertical"
+                            android:text="count"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/colorPrimaryDark"
+                    />
+                </LinearLayout>
             </LinearLayout>
 
             <FrameLayout
@@ -182,6 +183,14 @@
                 app:civ_border_color="@color/colorWhite"
                 app:civ_border_width="2dp"
                 app:layout_behavior=".AvatarImageBehavior"/>
+
+
+        <!--bottom sheet container-->
+        <FrameLayout
+                android:id="@+id/bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/bottom_sheet_behavior" />
 
     </android.support.design.widget.CoordinatorLayout>
 
